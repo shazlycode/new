@@ -1,7 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:portifolio/Providers/app_provider.dart';
+import 'package:portifolio/firebase_options.dart';
 import 'package:portifolio/main_screen.dart';
+import 'package:provider/provider.dart';
 
-void main() {
+Future<void> main() async {
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -10,6 +15,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: const MainScreen());
+    return ChangeNotifierProvider(
+        create: (context) => AppProvider(),
+        child: MaterialApp(home: const MainScreen()));
   }
 }
