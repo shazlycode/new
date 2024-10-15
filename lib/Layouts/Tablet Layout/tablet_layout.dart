@@ -6,7 +6,8 @@ class TabletLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("Tablet Layout from branch two and this update from the remote"),
+      child: Text(
+          "Tablet Layout from branch two and this update from the remote and this from local"),
     );
   }
 }
