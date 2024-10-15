@@ -60,6 +60,15 @@ class AppProvider with ChangeNotifier {
             "https://play-lh.googleusercontent.com/Op025DyPRfWoRk-6O0PvF3x5z4emq8Lirh3-JW0PESrASZ73vtQ7hzVa2ajQHsTkBjGG=w240-h480-rw",
         url:
             "https://play.google.com/store/apps/details?id=com.shazlycode.quran_app_test"),
+    App(
+        id: "6",
+        title: "Quick Note, Notepad, Notebook",
+        description:
+            " Awesome note pad app allows you to add notes to the calendar! Use Notepad to create notes, tasks, to-do lists on the calendar. View and organize your notes in the calendar mode makes it easy to master your schedule!.",
+        image:
+            "https://play-lh.googleusercontent.com/zRXkJnYjcmdESnmnQa-vYDxdOPHB-mxVF_hIz1qWdfxDnNZHpHqxpInoI3h9wmUU1A=w240-h480-rw",
+        url:
+            "https://play.google.com/store/apps/details?id=com.shazlycode.easy_note"),
   ];
   List<App> get apps => _apps;
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portifolio/Providers/app_provider.dart';
-import 'package:portifolio/main.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DesktopLayout extends StatelessWidget {
   const DesktopLayout({super.key});
@@ -32,6 +32,7 @@ class DesktopLayout extends StatelessWidget {
                     flex: 2,
                     child: Text(
                         "ShazlyCode is a highly regarded developer on Google Play, known for creating innovative and user-friendly mobile applications that cater to a wide range of users. With a focus on delivering quality apps, ShazlyCode is committed to enhancing the digital experience by offering well-designed, practical solutions across various categories such as productivity, health, and education.")),
+                SizedBox(width: 10),
                 Expanded(
                     flex: 2,
                     child: Text(
@@ -48,28 +49,43 @@ class DesktopLayout extends StatelessWidget {
                     mainAxisSpacing: 20),
                 itemCount: appProvider.apps.length,
                 itemBuilder: (context, index) {
-                  return Card(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(20),
+                  return GestureDetector(
+                    onTap: () async {
+                      try {
+                        if (await canLaunchUrl(
+                            Uri.parse(appProvider.apps[index].url!))) {
+                          await launchUrl(
+                              Uri.parse(appProvider.apps[index].url!));
+                        } else {
+                          throw 'Could not launch app';
+                        }
+                      } on Exception catch (_) {
+                        rethrow;
+                      }
+                    },
+                    child: Card(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        ),
                       ),
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          appProvider.apps[index].title!,
-                        ),
-                        Expanded(
-                          flex: 2,
-                          child: Image.network(
-                              errorBuilder: (context, err, stackTrace) {
-                            return Text("err");
-                          }, appProvider.apps[index].image!),
-                        ),
-                        Expanded(
-                            flex: 1,
-                            child: Text(appProvider.apps[index].description!))
-                      ],
+                      child: Column(
+                        children: [
+                          Text(
+                            appProvider.apps[index].title!,
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Image.network(
+                                errorBuilder: (context, err, stackTrace) {
+                              return Text("err");
+                            }, appProvider.apps[index].image!),
+                          ),
+                          Expanded(
+                              flex: 1,
+                              child: Text(appProvider.apps[index].description!))
+                        ],
+                      ),
                     ),
                   );
                 }))
