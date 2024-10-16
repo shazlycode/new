@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portifolio/Providers/app_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:social_media_buttons/social_media_button.dart';
+import 'package:social_media_flutter/social_media_flutter.dart';
 
 class DesktopLayout extends StatelessWidget {
   const DesktopLayout({super.key});
@@ -78,7 +80,7 @@ class DesktopLayout extends StatelessWidget {
                             flex: 2,
                             child: Image.network(
                                 errorBuilder: (context, err, stackTrace) {
-                              return Text("err");
+                              return const Text("err");
                             }, appProvider.apps[index].image!),
                           ),
                           Expanded(
@@ -88,7 +90,100 @@ class DesktopLayout extends StatelessWidget {
                       ),
                     ),
                   );
-                }))
+                })),
+        Container(
+          height: 60,
+          color: const Color.fromARGB(255, 61, 237, 137),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.instagram,
+                iconColor: Colors.pink,
+                link: '#',
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.github,
+                link: '#',
+                iconColor: Colors.black,
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.twitter,
+                iconColor: Colors.lightBlue,
+                link: '#',
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.youtube,
+                link: '#',
+                iconColor: Colors.red,
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.linkedin_box,
+                link: '#',
+                iconColor: Colors.blueGrey,
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.apple,
+                link: '#',
+                iconColor: Colors.black,
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.behance,
+                link: '#',
+                iconColor: Colors.deepPurple,
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.discord,
+                link: '#',
+                iconColor: Colors.blueAccent,
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.paypal,
+                link: '#',
+                iconColor: Colors.blueGrey,
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.twitch,
+                link: '#',
+                iconColor: Colors.deepPurpleAccent,
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.facebook_box,
+                link: '#',
+                iconColor: Colors.blueGrey,
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              SocialWidget(
+                placeholderText: '',
+                iconData: SocialIconsFlutter.spotify,
+                link: '#',
+                iconColor: Colors.green,
+                placeholderStyle: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
