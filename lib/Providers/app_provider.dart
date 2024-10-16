@@ -69,6 +69,15 @@ class AppProvider with ChangeNotifier {
             "https://play-lh.googleusercontent.com/zRXkJnYjcmdESnmnQa-vYDxdOPHB-mxVF_hIz1qWdfxDnNZHpHqxpInoI3h9wmUU1A=w240-h480-rw",
         url:
             "https://play.google.com/store/apps/details?id=com.shazlycode.easy_note"),
+    App(
+        id: "7",
+        title: "Weather Now - اخبار الطقس",
+        description:
+            "Weather Now, has accurate weather information for anytime and everywhere. Fixing some known issues.",
+        image:
+            "https://play-lh.googleusercontent.com/gj9prGtzMXMLGe4pKsf3ZaF0JcBvQHN4FdGdtbO6IH0Jo0mk1CgqvbbOW4RcjBptOw=w240-h480-rw",
+        url:
+            "https://play.google.com/store/apps/details?id=com.shazlycode.weather"),
   ];
   List<App> get apps => _apps;
 }
