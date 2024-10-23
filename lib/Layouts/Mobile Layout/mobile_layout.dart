@@ -83,9 +83,9 @@ class MobileLayout extends StatelessWidget {
                               return const Text("err");
                             }, appProvider.apps[index].image!),
                           ),
-                          Expanded(
-                              flex: 1,
-                              child: Text(appProvider.apps[index].description!))
+                          // Expanded(
+                          //     flex: 1,
+                          //     child: Text(appProvider.apps[index].description!))
                         ],
                       ),
                     ),

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "716637495519",
+    "project_id": "portfolio-552e5",
+    "storage_bucket": "portfolio-552e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716637495519:android:5d425381fa428bb867096a",
+        "android_client_info": {
+          "package_name": "com.shazlycode.portifolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYV0osBIU_evarZH8dkP6e1XVCfcRujkM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
